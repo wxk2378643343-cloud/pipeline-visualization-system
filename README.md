@@ -1,14 +1,5 @@
 # 管线定位系统
 
-## 项目来源与署名
-
-- 本仓库维护者：[doraBighead](https://github.com/wxk2378643343-cloud)
-- 上游项目：[EmileJones/pipeline-visualization-system](https://github.com/EmileJones/pipeline-visualization-system/tree/23afbdde07f498c826293a8e91d6595c9677eddf)
-- 许可证：[AGPL-3.0](./LICENSE)
-- 2026-11-21 修改：添加本仓库署名与来源说明，并将数据库连接信息改为环境变量。
-
-启动后端前，请设置 `PIPE_DB_URL`、`PIPE_DB_USERNAME` 和 `PIPE_DB_PASSWORD`。
-
 [![Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot%202.7.5-brightgreen)](./pipe-springboot)
 [![WeChat](https://img.shields.io/badge/Frontend-WeChat%20Mini%20Program-blue)](./pipes-wechat-minimum-programming)
 [![Language](https://img.shields.io/badge/Language-Java%2017%20%7C%20TypeScript-orange)](./)

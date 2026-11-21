@@ -1,0 +1,5 @@
+Based on EmileJones/pipeline-visualization-system.
+https://github.com/EmileJones/pipeline-visualization-system/tree/23afbdde07f498c826293a8e91d6595c9677eddf
+
+Modified on 2026-11-21 to load database connection settings from environment variables.
+Distributed under the GNU Affero General Public License v3.0. See LICENSE.
