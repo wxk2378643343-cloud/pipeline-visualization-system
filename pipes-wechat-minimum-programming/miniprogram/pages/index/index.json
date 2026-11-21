@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "offset-point":"../../components/OffsetPoint"
+  }
+}

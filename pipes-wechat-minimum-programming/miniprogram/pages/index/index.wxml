@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="map_container">
+    <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="20" show-location="true" polyline="{{polylines}}" markers="{{markers}}" enable-3D show-scale bindtap="getinformation" bindmarkertap="handleMarkertTap"></map>
+  </view>
+  <view class=" {{ up  ?  'map_text' : 'map_up'}}">
+    <text class="h1" wx:if="{{OffsetPointBoolen && textData.pipeId }}" class="h1">管道ID：{{textData.pipeId}}</text>
+    <text class="h1" wx:if="{{textData.types}}" class="h1">管道类型：{{textData.types}}</text>
+    <text class="h1" wx:if="{{textData.deep}}">管道深度：{{textData.deep}}</text>
+    <text class="h1" wx:if="{{textData.material}}">管道中井口类型：{{textData.material}}</text>
+    <text class="h1" wx:if="{{OffsetPointBoolen && textData.id}}"> 井口id：{{textData.id}}</text>
+    <text class="h1" wx:if="{{textData.model}}"> 型号：{{textData.model}}</text>
+    <text class="h1" wx:if="{{textData.type}}"> 井类型：{{textData.type}}</text>
+  </view>
+  <button class="button" bindtap="UploadFile">
+    <image src="../../static/upload.png" />
+  </button>
+  <checkbox class="checkbox" model:checked="{{OffsetPointBoolen}}" color="red">测试模式</checkbox>
+  <button class="search" bindtap="searchPipe">筛选</button>
+  <!-- 管道偏移 -->
+  <offset-point wx:if="{{OffsetPointBoolen}}" class="offsetPoint" bind:getOffsetPoint="getOffsetPoint"></offset-point>
+
+  <view class=" {{ hidden === true?  'showClass' : 'hiddenClass'}}"></view>
+  <scroll-view scroll-y="true" class=" {{ hidden === true?  'pipe_search ' : 'pipe_hidden'}}">
+    <view class="close">
+      <view bindtap="closePipe">✖</view>
+    </view>
+    <view class="pipe_search_show">
+      <view class="pipe_type">
+        管道类型：
+        <checkbox-group bindchange="checkboxChange">
+          <checkbox wx:for="{{pipeType}}" class="pipe_search_result" value="{{item}}" wx:key="id" style="float:left;">{{item}}</checkbox>
+        </checkbox-group>
+      </view>
+    </view>
+    <view class="showButton">
+      <button bindtap="allShow">全部展示</button><button bindtap="partShow">选中展示</button>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,216 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+/* amap */
+.map_container {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.map_text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 0px;
+  background: #F0FFFF;
+  padding: 0 15px;
+  color: black;
+}
+
+.map_up {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 300rpx;
+  background: #E1FFFF;
+  padding: 0 15px;
+  border-radius: 20px;
+}
+
+text {
+  margin: 5px 0;
+  display: block;
+  font-size: 12px;
+}
+
+.h1 {
+  margin: 15px 0;
+  font-size: 15px;
+}
+
+.button {
+  position: relative;
+  left: 242rpx;
+  top: -85rpx;
+  width: 113rpx;
+  height: 62rpx;
+  display: block;
+  box-sizing: border-box;
+}
+
+.checkbox {
+  position: relative;
+  left: 320rpx;
+  top: -220rpx;
+  width: 300rpx;
+  height: 62rpx;
+  display: block;
+  box-sizing: border-box;
+  font-size: small;
+  color: red;
+}
+
+.button>image {
+  width: 64rpx;
+  height: 60rpx;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.search {
+  position: relative;
+  background: white;
+  font-size: small;
+  width: 184rpx;
+  height: 62rpx;
+  display: block;
+  box-sizing: border-box;
+  left: -228rpx;
+  top: -206rpx;
+  position: relative;
+}
+
+.showClass {
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 1001;
+  opacity: 0.70;
+}
+
+.pipe_search {
+  position: absolute;
+  width: 700rpx;
+  height: 900rpx;
+  background-color: white;
+  z-index: 9999;
+  border-radius: 20px;
+}
+
+.pipe_hidden {
+  display: none;
+}
+
+.pipe_input {
+  margin: 0 auto;
+  display: inline-block;
+  width: 500rpx;
+  margin-top: 30px;
+}
+
+.pipe_search_show {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.pipe_search_result {
+  display: block;
+  width: 80%;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+.close {
+  padding-top:10rpx ;
+  text-align: right;
+  font-size: larger;
+  padding-right: 30rpx;
+}
+
+.showButton {
+  margin-top: 10rpx;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.showButton>button {
+  margin-top: 20px;
+  display: inline-block;
+  width: 40%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.input {
+  padding-left: 3px;
+  position: absolute;
+  left: 0rpx;
+  top: 850rpx;
+  display: block;
+  box-sizing: border-box;
+  width: 200px;
+  height: 160px;
+  background: paleturquoise;
+  position: absolute;
+}
+
+.input>input {
+  padding-left: 10px;
+  display: inline-block;
+  width: 70%;
+  background: white;
+}
+
+.input>button {
+  margin-top: 10px;
+  display: inline-block;
+  width: 60px;
+  font-size: smaller;
+  height: 40px;
+  background: white;
+}
+
+.offsetPoint {
+  position: absolute;
+  bottom: 200rpx;
+  right: 10rpx;
+  z-index: 99;
+}

@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: prod
+  jackson:
+    # json 序列化排除值为 null 的属性
+    default-property-inclusion: non_null
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  type-aliases-package: tyut.selab.a2.pipes.entity
+
+server:
+  port: 23317
+  ssl:
+    key-store: classpath:/doc/kuangshen.xyz.jks
+    key-store-password: 01suy5ic
+    key-store-type: JKS
+
+  compression:
+    enabled: true
+    mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain
+
+pipe:
+  splitSign: "、"
+  offset:
+    latitudeOffset: 0.000028
+    longitudeOffset: -0.000017

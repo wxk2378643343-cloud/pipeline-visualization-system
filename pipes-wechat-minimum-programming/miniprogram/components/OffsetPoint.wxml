@@ -1,0 +1,11 @@
+<!--components/OffsetPoint.wxml-->
+<!--components/OffsetPoint.wxml-->
+<view class="background">
+  <view>
+    <text>经度:</text><input type="text" placeholder="请输入经度"  model:value="{{longitude}}" bindinput="null"/>
+  </view>
+  <view >
+    <text>纬度:</text><input  type="text"  placeholder="请输入纬度" model:value="{{latitude}}"  bindinput="null"/>
+  </view>
+  <button bindtap="getOffsetPoint" >确定</button>
+</view>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tyut.selab.a2.pipes.mapper.PipeMapper">
+
+    <resultMap id="Pipe" type="tyut.selab.a2.pipes.entity.Pipe">
+        <id property="id" column="id"/>
+        <result property="type" column="type"/>
+        <result property="wellsId" column="wells_id" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler"/>
+        <result property="material" column="material"/>
+        <result property="diameter" column="diameter"/>
+    </resultMap>
+
+    <insert id ="insertBatch" parameterType="java.util.List" >
+        INSERT INTO  pipe
+        (type, wells_id, material,diameter,deep)
+        VALUE
+            <foreach collection ="pipes" item="pipe" separator="," >
+                (
+                #{pipe.type},
+                #{pipe.wellsId,javaType=Object,jdbcType=VARCHAR,
+                typeHandler=com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler},
+                #{pipe.material},#{pipe.diameter},#{pipe.deep}
+                )
+            </foreach >
+    </insert>
+
+    <delete id="deletePipe">
+        truncate table pipe;
+    </delete>
+
+
+</mapper>

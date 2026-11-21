@@ -1,0 +1,33 @@
+# --- IDE & System ---
+.idea/
+.vscode/
+.DS_Store
+*.iml
+*.iws
+*.ipr
+
+# --- Java (pipe-springboot) ---
+pipe-springboot/target/
+pipe-springboot/logs/
+pipe-springboot/.apt_generated
+pipe-springboot/.classpath
+pipe-springboot/.factorypath
+pipe-springboot/.project
+pipe-springboot/.settings
+pipe-springboot/.springBeans
+pipe-springboot/.sts4-cache
+
+# Maven wrapper
+!pipe-springboot/.mvn/wrapper/maven-wrapper.jar
+
+# --- WeChat Mini Program (pipes-wechat-minimum-programming) ---
+pipes-wechat-minimum-programming/node_modules/
+pipes-wechat-minimum-programming/miniprogram_npm/
+pipes-wechat-minimum-programming/dist/
+# 忽略微信开发者工具生成的个人配置
+pipes-wechat-minimum-programming/project.private.config.json
+
+# --- General ---
+**/target/
+**/build/
+**/logs/

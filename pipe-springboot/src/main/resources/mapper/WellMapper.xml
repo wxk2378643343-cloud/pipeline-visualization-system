@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tyut.selab.a2.pipes.mapper.WellMapper">
+
+    <insert id ="insertBatch" parameterType="java.util.List" >
+        insert into well
+        ( longitude, latitude, type,model)
+        values
+        <foreach collection ="wells" item="well" index= "index" separator="," >
+            (
+            #{well.longitude},#{well.latitude},#{well.type},#{well.model}
+            )
+        </foreach >
+    </insert >
+
+    <delete id="deleteWell">
+        truncate table well;
+    </delete>
+
+
+</mapper>
