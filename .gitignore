@@ -31,3 +31,6 @@ pipes-wechat-minimum-programming/project.private.config.json
 **/target/
 **/build/
 **/logs/
+
+
+.env

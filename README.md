@@ -28,3 +28,25 @@
     └── miniprogram/utils/           # 坐标转换与前端计算工具
 ```
 
+
+
+## Docker 本地启动后端
+
+安装 Docker 和 Compose v2。在仓库根目录创建 `.env`，用独立密码替换示例值。
+
+```dotenv
+DB_ROOT_PASSWORD=replace_with_a_mysql_root_password
+DB_PASSWORD=replace_with_an_app_database_password
+APP_PORT=23317
+```
+
+```sh
+docker compose config --quiet
+docker compose up -d --build
+docker compose ps
+curl --fail http://localhost:23317/data/get
+```
+
+MySQL 首次启动时创建 `pipes` 数据库和两张空表。后续启动保留数据库卷。使用 `docker compose logs --tail=100 backend` 查看后端日志，使用 `docker compose down` 停止服务。镜像使用 [独立配置](docker/application.yml)，本地 API 只监听回环地址并使用 HTTP。
+
+小程序在 [微信开发者工具](pipes-wechat-minimum-programming/README.md) 中打开。模拟器联调时，按前端文档修改 API 地址和端口。正式小程序环境需单独配置可访问的 HTTPS API 域名。

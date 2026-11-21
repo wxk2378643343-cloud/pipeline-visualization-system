@@ -1,0 +1,18 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: tyut.selab.a2.pipes.entity
+
+server:
+  port: 23317
+  compression:
+    enabled: true
+
+pipe:
+  splitSign: "、"
+  offset:
+    latitudeOffset: 0.000028
+    longitudeOffset: -0.000017
