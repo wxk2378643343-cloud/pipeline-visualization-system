@@ -1,36 +1,33 @@
 # 管线定位系统
 
-[![Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot%202.7.5-brightgreen)](./pipe-springboot)
-[![WeChat](https://img.shields.io/badge/Frontend-WeChat%20Mini%20Program-blue)](./pipes-wechat-minimum-programming)
-[![Language](https://img.shields.io/badge/Language-Java%2017%20%7C%20TypeScript-orange)](./)
+![Java 17](https://img.shields.io/badge/Java%2017-2563EB?style=flat-square)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-0F766E?style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-334155?style=flat-square)
+![微信小程序](https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-B45309?style=flat-square)
 
 ## 📌 项目简介
 
-本项目是为 **中铁三局** 定制开发的数字化施工管理解决方案。旨在解决传统施工现场“地下管网复杂、纸质图纸难携带、定位交底效率低”的痛点。通过将复杂的地下管网数据数字化，并结合手机高精度定位，实现“**图纸入口袋，现场见真章**”的施工新模式。
+为中铁三局定制的施工现场地下管网可视化工具。施工人员可以在地图上查看管线和井位、查询属性，并通过 Excel 导入更新数据。
 
 ## 🏗️ 系统架构
 
-系统采用前后端分离架构，确保了施工现场高频交互的流畅性：
-*   **后端 (`pipe-springboot`)**：负责空间点位的存储、高并发检索算法实现及 Excel 拓扑校验。
-*   **前端 (`pipes-wechat-minimum-programming`)**：基于微信小程序原生开发，提供实时地图渲染、交互式参数查询及现场数据采集。
-
-> 💡 **提示**：若需深入了解各端的硬核技术实现（如空间索引算法、坐标转换细节）及部署指南，请分别参阅 [后端子项目 README](./pipe-springboot/README.md) 与 [前端子项目 README](./pipes-wechat-minimum-programming/README.md)。
+- 微信小程序负责定位、地图绘制和交互查询。
+- Spring Boot 服务负责解析 Excel、检索空间点位，并将管线和井位存入 MySQL。
+- 分端开发与联调步骤见 [后端 README](pipe-springboot/README.md) 和 [小程序 README](pipes-wechat-minimum-programming/README.md)。
 
 ## 📁 项目结构
 
-```text
-.
-├── pipe-springboot/                 # Spring Boot 后端工程
-│   ├── sql/                         # 数据库初始化脚本
-│   └── src/                         # 核心业务与空间算法
-└── pipes-wechat-minimum-programming/ # 微信小程序前端工程
-    ├── miniprogram/pages/index/     # 地图主交互页面
-    └── miniprogram/utils/           # 坐标转换与前端计算工具
-```
+| 路径 | 用途 |
+| --- | --- |
+| [`pipe-springboot`](pipe-springboot) | 后端、数据库脚本与空间检索 |
+| [`pipes-wechat-minimum-programming`](pipes-wechat-minimum-programming) | 原生微信小程序 |
+| [`docker`](docker) | 后端镜像和本地运行配置 |
 
+## 🚀 如何启动
 
+先用 Docker 启动后端与数据库，再打开微信开发者工具联调。
 
-## Docker 本地启动后端
+### Docker 本地启动后端
 
 安装 Docker 和 Compose v2。在仓库根目录创建 `.env`，用独立密码替换示例值。
 
