@@ -129,3 +129,9 @@ curl --fail http://localhost:23317/data/get
 MySQL 首次启动时创建 `pipes` 数据库和两张空表。后续启动保留数据库卷。使用 `docker compose logs --tail=100 backend` 查看后端日志，使用 `docker compose down` 停止服务。镜像使用 [独立配置](docker/application.yml)，本地 API 只监听回环地址并使用 HTTP。
 
 小程序在 [微信开发者工具](pipes-wechat-minimum-programming/README.md) 中打开。模拟器联调时，按前端文档修改 API 地址和端口。正式小程序环境需单独配置可访问的 HTTPS API 域名。
+
+---
+
+## 📄 开源许可证
+
+本项目基于 [GNU Affero General Public License v3.0 (AGPL-3.0)](LICENSE) 开源。
